@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>фз. — Проверка сайта по 152-ФЗ</title>
+<!-- Google Fonts: Manrope (Headlines) & Inter (Body) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    ::selection {
+      background-color: #ffdad4;
+      color: #5b0300;
+    }
+  </style>
+<!-- Tailwind CSS with custom theme tokens -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#fd5740",
+            "primary-fixed-dim": "#c4c6ce",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#888a91",
+            "on-secondary-fixed": "#400200",
+            "surface": "#fef8f1",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#c8c4d7",
+            "surface-bright": "#fef8f1",
+            "tertiary-fixed": "#e5e0f4",
+            "on-secondary": "#ffffff",
+            "background": "#fef8f1",
+            "secondary-fixed": "#ffdad4",
+            "on-background": "#1d1b17",
+            "inverse-surface": "#32302c",
+            "on-secondary-container": "#5b0300",
+            "tertiary": "#0d0b19",
+            "surface-container-low": "#f9f3ec",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c6c6cb",
+            "on-tertiary-fixed": "#1b1a28",
+            "on-secondary-fixed-variant": "#910800",
+            "secondary-fixed-dim": "#ffb4a7",
+            "primary-container": "#202329",
+            "outline": "#76777b",
+            "tertiary-container": "#23212f",
+            "on-surface": "#1d1b17",
+            "surface-container-high": "#ede7e0",
+            "surface-variant": "#e7e2db",
+            "primary": "#0a0d13",
+            "primary-fixed": "#e1e2ea",
+            "surface-dim": "#dfd9d2",
+            "on-tertiary-fixed-variant": "#474555",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#8b889a",
+            "secondary": "#b62413",
+            "on-surface-variant": "#45474b",
+            "surface-tint": "#5c5e65",
+            "surface-container": "#f3ede6",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#c4c6ce",
+            "inverse-on-surface": "#f6f0e9",
+            "on-primary-fixed": "#191c21",
+            "surface-container-highest": "#e7e2db",
+            "on-primary-fixed-variant": "#44474d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "2rem",
+            "space-md": "1rem",
+            "margin-tablet": "2.5rem",
+            "space-xl": "2.5rem",
+            "margin": "1.25rem",
+            "gutter": "1.5rem",
+            "margin-desktop": "4rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Manrope", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Manrope", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "headline-md": ["Manrope", "sans-serif"],
+            "stat-display": ["Manrope", "sans-serif"],
+            "meta-tag": ["Inter", "sans-serif"],
+            "headline-sm": ["Manrope", "sans-serif"],
+            "display-hero": ["Manrope", "sans-serif"],
+            "headline-lg-mobile": ["Manrope", "sans-serif"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "23px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "stat-display": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "meta-tag": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TOP APP BAR / NAVIGATION (Semantic Shared Component) -->
+<header class="sticky top-0 z-50 bg-surface border-b border-surface-container-high transition-colors" id="top">
+<div class="flex justify-between items-center w-full px-6 md:px-16 max-w-[1440px] mx-auto h-20">
+<!-- Brand Logo + Pill Badge -->
+<div class="flex items-center gap-3">
+<a class="text-headline-md font-headline-md font-bold tracking-tight text-primary flex items-baseline" href="#top">
+<span>фз</span><span class="text-secondary-container">.</span>
+</a>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-meta-tag font-meta-tag bg-surface-container-high text-on-surface-variant border border-outline-variant/30">
+          Бесплатно
+        </span>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#scope">
+          Что проверяем
+        </a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#solution">
+          Как исправить
+        </a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-150" href="#sample-report">
+          Пример отчёта
+        </a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-primary-container text-surface hover:bg-primary text-label-md font-label-md transition-all duration-150 active:scale-[0.98] shadow-sm" href="#start-check">
+          Проверить сайт
+        </a>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- HERO SECTION (2-Column Impact Asymmetric Layout) -->
+<section class="max-w-[1440px] mx-auto px-6 md:px-16 pt-12 md:pt-20 pb-20 md:pb-28">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- LEFT COLUMN: Typography & High-intent Input Form -->
+<div class="lg:col-span-6 flex flex-col justify-center">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-surface-container-low border border-surface-container-high mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="text-meta-tag font-meta-tag text-on-surface-variant">Проверка сайта по 152-ФЗ</span>
+</div>
+<!-- Headline -->
+<h1 class="text-headline-lg-mobile md:text-display-hero font-display-hero text-primary tracking-tight mb-6">
+            Проверьте сайт.<br/>
+<span class="relative inline-block text-primary">
+              Поймите, что <span class="relative inline-block">исправить.<svg class="absolute -bottom-2 left-0 w-full overflow-visible" fill="none" height="10" viewbox="0 0 280 10" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.5C70 2.5 180 2.5 278 6" stroke="#fd5740" stroke-linecap="round" stroke-width="3.5"></path></svg></span>
+</span>
+</h1>
+<!-- Crisp Editorial Subhead -->
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-lg">
+            Узнайте, какие проблемы с обработкой персональных данных видны на сайте. Получите отчёт с возможными штрафами, ссылками на закон и планом исправлений.
+          </p>
+<!-- Search / URL Input Box -->
+<div class="w-full max-w-xl bg-surface-container-lowest p-2 rounded-2xl border border-surface-container-high shadow-[0_12px_32px_-4px_rgba(32,35,41,0.06)] focus-within:border-primary-container focus-within:ring-2 focus-within:ring-secondary-fixed transition-all mb-4" id="hero-input">
+<form class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault(); location.href='#sample-report';">
+<div class="relative flex-1 flex items-center pl-3">
+<span class="text-on-surface-variant/40 font-body-md pr-1 text-label-md font-label-md select-none">https://</span>
+<input class="w-full bg-transparent border-0 p-2 text-primary font-body-md placeholder:text-on-surface-variant/40 focus:ring-0 focus:outline-none" id="target-url" placeholder="example.ru" required="" type="text" value="example.ru"/>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-secondary-container hover:bg-secondary text-on-secondary rounded-xl text-label-md font-label-md transition-all duration-150 active:scale-[0.98] shadow-[0_2px_8px_rgba(253,87,64,0.3)] whitespace-nowrap cursor-pointer" id="check-btn" type="submit">
+<span>Проверить сайт</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Reassurance Line Under Input -->
+<div class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant/80 mb-6 pl-1">
+<span>Бесплатно · Без регистрации · Отчёт в PDF</span>
+</div>
+<!-- Secondary Jump Link -->
+<a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-primary font-medium hover:text-secondary-container transition-colors duration-150" href="#sample-report">
+<span>Посмотреть пример отчёта ↓</span>
+</a>
+</div>
+<!-- RIGHT COLUMN: Bespoke Studio Diagnostic Stage Mockup -->
+<div class="lg:col-span-6 relative" id="sample-report">
+<!-- Stage Background Canvas (Lavender-Blue Mist) -->
+<div class="relative w-full rounded-3xl bg-[#EBF2FA] border border-[#DEE7F0] p-6 sm:p-9 overflow-hidden">
+<!-- Soft Ambient Tint Backing -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#ECE7FB] blur-3xl opacity-70 pointer-events-none"></div>
+<!-- Embedded Browser Preview Frame -->
+<div class="relative bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-[0_16px_40px_-8px_rgba(32,35,41,0.08)] overflow-hidden">
+<!-- Window Chrome Header -->
+<div class="flex items-center justify-between px-4 py-3 bg-surface-container-low border-b border-surface-container-high">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant/60"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant/60"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant/60"></span>
+</div>
+<div class="px-3 py-1 rounded-md bg-surface text-meta-tag font-meta-tag text-on-surface-variant border border-surface-container-high">
+                  example.ru/contacts
+                </div>
+<div class="w-8"></div>
+</div>
+<!-- Russian Contact Web Form inside window -->
+<div class="p-6 sm:p-7 space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-surface-container-low">
+<h3 class="text-headline-sm font-headline-sm text-primary">Оформление заявки</h3>
+<span class="text-meta-tag font-meta-tag text-on-surface-variant">Шаг 2 из 2</span>
+</div>
+<div class="space-y-3">
+<div>
+<label class="block text-meta-tag font-meta-tag text-on-surface-variant mb-1">Имя</label>
+<div class="w-full px-3 py-2 rounded-lg bg-surface-container-low border border-surface-container-high text-body-sm font-body-sm text-on-surface">
+                      Иван
+                    </div>
+</div>
+<div>
+<label class="block text-meta-tag font-meta-tag text-on-surface-variant mb-1">Номер телефона</label>
+<div class="w-full px-3 py-2 rounded-lg bg-surface-container-low border border-surface-container-high text-body-sm font-body-sm text-on-surface">
+                      +7 (999) 000-00-00
+                    </div>
+</div>
+<!-- The Infraction Target: Pre-checked Checkbox with Coral Warning Indicator -->
+<div class="relative p-3 rounded-xl bg-error-container/20 border border-secondary-container/40">
+<!-- Coral diagnostic pin -->
+<div class="absolute -top-2.5 -right-2.5 w-6 h-6 rounded-full bg-secondary-container text-surface flex items-center justify-center text-[12px] font-bold shadow-md ring-2 ring-surface">
+                      !
+                    </div>
+<div class="flex items-start gap-2.5">
+<div class="mt-0.5 w-4 h-4 rounded bg-primary-container flex items-center justify-center text-surface shrink-0">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-medium text-error">Согласие на обработку данных</span>
+<div class="text-meta-tag font-meta-tag text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">link_off</span>
+<span class="underline decoration-secondary">Политика обработки данных</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-surface text-label-md font-label-md opacity-85" type="button">
+                    Отправить заявку
+                  </button>
+</div>
+</div>
+</div>
+<!-- Overlapping Tangible Audit Note / Floating Report Overlay Card -->
+<div class="relative sm:absolute sm:-bottom-6 sm:-left-4 mt-6 sm:mt-0 max-w-sm w-full bg-surface-container-lowest rounded-2xl p-5 border border-surface-container-high shadow-[0_20px_45px_-8px_rgba(32,35,41,0.18)] transform sm:-rotate-2 transition-transform hover:rotate-0">
+<!-- Sheet Head -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="text-label-md font-label-md font-semibold text-primary">Пример отчёта</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-meta-tag font-meta-tag bg-error-container text-on-secondary-container font-medium">
+                  2 пункта требуют внимания
+                </span>
+</div>
+<!-- Findings Details -->
+<div class="py-3 space-y-2.5 text-body-sm font-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[18px] shrink-0 mt-0.5">priority_high</span>
+<div>
+<div class="font-medium text-primary">Политика не открывается</div>
+<div class="text-on-surface-variant text-meta-tag font-meta-tag">Посетитель не может прочитать, как используются его данные.</div>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[18px] shrink-0 mt-0.5">check_box</span>
+<div>
+<div class="font-medium text-primary">Согласие отмечено заранее</div>
+<div class="text-on-surface-variant text-meta-tag font-meta-tag">Отметка уже стоит до выбора посетителя.</div>
+</div>
+</div>
+</div>
+<!-- Bottom Remediation Summary Chip -->
+<div class="pt-3 border-t border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-meta-tag font-meta-tag text-[#2A4B7C] bg-[#EBF2FA] px-2.5 py-1 rounded-md font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Что исправить — по шагам</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1 (id="solution"): «От находки — к понятному решению» -->
+<section class="max-w-[1440px] mx-auto px-6 md:px-16 py-16 md:py-24 border-t border-surface-container-high" id="solution">
+<!-- Section Header -->
+<div class="max-w-2xl mb-14">
+<span class="text-meta-tag font-meta-tag text-secondary-container font-semibold tracking-wider uppercase">План исправлений</span>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight mt-2 mb-4">
+          От находки — к понятному решению
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+          Покажем, где возникла проблема, чем она может грозить и что нужно изменить. Отчёт можно передать тому, кто занимается вашим сайтом.
+        </p>
+</div>
+<!-- Editorial Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT: Remediation Card (Sample Action Card) -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl border border-surface-container-high p-6 sm:p-8 shadow-sm">
+<!-- Card Header -->
+<div class="flex items-center justify-between pb-5 border-b border-surface-container-high">
+<div class="flex items-center gap-3">
+<span class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Как исправить замечание</h3>
+<p class="text-meta-tag font-meta-tag text-on-surface-variant">Пример: политика не открывается</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-md bg-[#ECE7FB] text-[#4D3A8F] text-meta-tag font-meta-tag font-medium">
+              План действий
+            </span>
+</div>
+<!-- Action Steps -->
+<div class="py-6 space-y-4">
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex items-start gap-3">
+<div class="w-5 h-5 rounded-md bg-primary-container text-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<span class="text-body-sm font-body-sm font-semibold text-primary">01. Проверьте документ</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                  Убедитесь, что политика опубликована и открывается по ссылке.
+                </p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex items-start gap-3">
+<div class="w-5 h-5 rounded-md bg-primary-container text-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<span class="text-body-sm font-body-sm font-semibold text-primary">02. Исправьте ссылку на сайте</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                  Рядом с формой укажите ссылку на действующую политику обработки данных.
+                </p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-container-high flex items-start gap-3">
+<div class="w-5 h-5 rounded-md bg-primary-container text-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<span class="text-body-sm font-body-sm font-semibold text-primary">03. Проверьте результат</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                  Откройте страницу как посетитель: документ должен быть доступен без входа в личный кабинет.
+                </p>
+</div>
+</div>
+</div>
+<!-- Bottom Action in Card -->
+<div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
+<span class="text-meta-tag font-meta-tag text-on-surface-variant">Сохраните отчёт и задания на исправление в PDF</span>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-container-high hover:bg-surface-container-low text-label-md font-label-md text-primary transition-colors" href="#sample-report">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Пример задания</span>
+</a>
+</div>
+</div>
+<!-- RIGHT: Varied Editorial Benefit Cards -->
+<div class="lg:col-span-6 flex flex-col gap-6 lg:pl-4">
+<!-- Benefit 1 (lavender card) -->
+<div class="p-8 rounded-2xl bg-[#ECE7FB] border border-[#DEE7F0]">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary mb-5 shadow-xs">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-primary tracking-tight mb-2">
+              Проблема на конкретной странице
+            </h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+              В отчёте будет адрес страницы и описание того, что обнаружено. Вы сможете проверить находку самостоятельно.
+            </p>
+</div>
+<!-- Benefit 2 & 3 in a grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high shadow-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">
+                Возможные штрафы и основания
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Укажем статью закона и диапазоны штрафов для граждан, должностных лиц, ИП и организаций — там, где применимость подтверждена.
+              </p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high shadow-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">
+                Понятные задания на исправление
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Что изменить и как убедиться, что проблема решена. Для каждого замечания — отдельное задание.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2 (id="scope"): «Что входит в проверку» -->
+<section class="max-w-[1440px] mx-auto px-6 md:px-16 py-16 md:py-24 border-t border-surface-container-high" id="scope">
+<!-- Section Title -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+<div class="max-w-2xl">
+<span class="text-meta-tag font-meta-tag text-secondary-container font-semibold tracking-wider uppercase">Что входит в проверку</span>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight mt-2">
+            Документы и согласия на сайте
+          </h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md">
+          Проверяем открытые страницы и документы, связанные со сбором персональных данных.
+        </p>
+</div>
+<!-- Clean Editorial Typographic List with Fine Hairline Dividers -->
+<div class="border-y border-surface-container-high divide-y divide-surface-container-high bg-surface-container-lowest rounded-2xl overflow-hidden shadow-xs">
+<!-- Item 01 -->
+<div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-start md:items-center gap-6">
+<span class="font-mono text-headline-sm font-headline-sm text-on-surface-variant/60">01</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Политика обработки данных</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Есть ли доступная ссылка на политику там, где сайт собирает данные посетителей.
+              </p>
+</div>
+</div>
+<span class="self-start md:self-auto px-3 py-1 rounded-full text-meta-tag font-meta-tag bg-[#EBF2FA] text-[#2A4B7C] font-medium shrink-0">
+            Документы
+          </span>
+</div>
+<!-- Item 02 -->
+<div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-start md:items-center gap-6">
+<span class="font-mono text-headline-sm font-headline-sm text-on-surface-variant/60">02</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Сведения о защите данных</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Опубликована ли информация о защите персональных данных — отдельно или в политике.
+              </p>
+</div>
+</div>
+<span class="self-start md:self-auto px-3 py-1 rounded-full text-meta-tag font-meta-tag bg-surface-container text-on-surface-variant font-medium shrink-0">
+            Защита данных
+          </span>
+</div>
+<!-- Item 03 -->
+<div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-start md:items-center gap-6">
+<span class="font-mono text-headline-sm font-headline-sm text-primary font-bold">03</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Отметки согласия</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Не выбрано ли согласие заранее, до решения посетителя.
+              </p>
+</div>
+</div>
+<span class="self-start md:self-auto px-3 py-1 rounded-full text-meta-tag font-meta-tag bg-surface-container-high text-on-surface-variant font-medium shrink-0">
+            Выбор посетителя
+          </span>
+</div>
+<!-- Item 04 -->
+<div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-start md:items-center gap-6">
+<span class="font-mono text-headline-sm font-headline-sm text-on-surface-variant/60">04</span>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Отдельное согласие</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                Есть ли признаки отдельного оформления согласия, если данные обрабатываются на его основании.
+              </p>
+</div>
+</div>
+<span class="self-start md:self-auto px-3 py-1 rounded-full text-meta-tag font-meta-tag bg-[#ECE7FB] text-[#4D3A8F] font-medium shrink-0">
+            Согласие
+          </span>
+</div>
+</div>
+<!-- Scope Clarification Callout Box -->
+<div class="mt-8 p-6 rounded-2xl bg-surface-container-low border border-surface-container-high flex flex-col sm:flex-row items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-[24px] shrink-0 mt-0.5">verified_user</span>
+<div class="text-body-sm font-body-sm text-on-surface-variant space-y-1">
+<div class="font-semibold text-primary">Об объёме проверки</div>
+<p>
+            До 20 страниц сайта и доступные правовые документы. Автоматическая проверка помогает найти проблемы, но не заменяет полный юридический аудит.
+          </p>
+</div>
+</div>
+</section>
+<!-- FINAL CTA BAND (id="start-check") -->
+<section class="max-w-[1440px] mx-auto px-6 md:px-16 py-12 md:py-20" id="start-check">
+<div class="rounded-3xl bg-primary-container text-surface p-8 md:p-14 relative overflow-hidden shadow-xl">
+<!-- Subtle Coral Decorative Line -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-2xl relative z-10">
+<span class="text-meta-tag font-meta-tag text-secondary-fixed font-semibold tracking-wider uppercase">Бесплатная проверка</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-surface tracking-tight mt-2 mb-3">
+            Узнайте, что стоит исправить на вашем сайте
+          </h2>
+<p class="text-body-lg font-body-lg text-primary-fixed-dim mb-8">
+            Введите адрес — получите результаты проверки и задания на исправление в одном PDF. Без регистрации и скрытых условий.
+          </p>
+<!-- Input + Button in Dark Container -->
+<form class="flex flex-col sm:flex-row gap-3 max-w-lg mb-4" onsubmit="event.preventDefault(); location.href='#sample-report';">
+<input class="flex-1 px-4 py-3.5 rounded-xl bg-surface/10 border border-surface/20 text-surface placeholder:text-surface/40 focus:outline-none focus:ring-2 focus:ring-secondary-container text-body-md font-body-md" id="bottom-url" placeholder="mysite.ru" required="" type="text" value="mysite.ru"/>
+<button class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-secondary-container hover:bg-secondary text-on-secondary text-label-md font-label-md font-medium transition-all duration-150 active:scale-[0.98] shadow-md whitespace-nowrap cursor-pointer" type="submit">
+<span>Проверить сайт</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<p class="text-meta-tag font-meta-tag text-primary-fixed-dim/70 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary-fixed">info</span>
+<span>Результат хранится 24 часа с начала проверки. Повторный запрос в этот срок откроет тот же отчёт.</span>
+</p>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Semantic Shared Component) -->
+<footer class="bg-surface-container-low border-t border-surface-container-high transition-colors">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-16 py-12 max-w-[1440px] mx-auto gap-6 md:gap-0">
+<!-- Brand & Note -->
+<div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+<a class="text-headline-sm font-headline-sm font-bold text-primary flex items-baseline" href="#top">
+<span>фз</span><span class="text-secondary-container">.</span>
+</a>
+<span class="hidden sm:inline text-outline-variant">·</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          © 2026 фз. — проверка сайтов по требованиям к персональным данным. Не является официальным юридическим заключением.
+        </p>
+</div>
+<!-- Links (Section Anchors Only) -->
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#scope">
+          Что проверяем
+        </a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#solution">
+          Как исправить
+        </a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#sample-report">
+          Пример отчёта
+        </a>
+</div>
+</div>
+</footer>
+</body></html>
