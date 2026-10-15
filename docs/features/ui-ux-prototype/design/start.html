@@ -237,7 +237,7 @@
       btnSpinner.classList.remove('hidden');
       btnSpinner.classList.add('flex');
       progressBox.classList.remove('hidden');
-      
+
       let step = 0;
       const stages = [
         "ПОЛУЧЕНИЕ ROBOTS.TXT И SITEMAP.XML...",
@@ -252,7 +252,7 @@
         const percent = Math.min(step * 20, 100);
         progressBar.style.width = percent + '%';
         scanCounter.textContent = Math.min(Math.round(step * 3.8), 20) + " / 20 СТР.";
-        
+
         if (stages[step - 1]) {
           scanStatus.textContent = stages[step - 1];
         }
